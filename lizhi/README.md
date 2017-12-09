@@ -1,0 +1,2 @@
+# lizhi
+django sample 

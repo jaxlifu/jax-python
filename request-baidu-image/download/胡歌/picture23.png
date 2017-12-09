@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gbk" />
+<title></title>
+<meta name="description" content="" />
+<style>
+/*public*/
+body,h1,h2,h3,h4,h5,h6,hr,p,dl,dt,dd,ul,ol,li,pre,form,button,input,textarea,th,td {margin:0;padding:0;}
+body,button,input,select,textarea {font:12px/1.125 "宋体",Arial;}
+ul,ol,li{list-style:none}
+img{ border:0; }
+a{ text-decoration:none; color:#0060c3;}
+a:hover{ text-decoration:underline}
+.clear{clear:both;height:0px;overflow:hidden;}
+
+
+/*布局*/
+.header,.main,.footer{width:652px; margin:0 auto}
+.header_box1{width:621px; margin:0 auto}
+
+/*header*/
+.logo{width:142px; float:left}
+.nav{width:479px; float:left}
+.nav_t{height:23px; padding-top:17px; padding-right:12px}
+.dot{float:right; background:url(http://resources.it168.com/customerror/images/bg.png) no-repeat 0 -77px; width:113px; height:18px; text-indent:-9999px}
+.navTip1{position: relative;width:113px;display: none;}
+.navTip1_1{position: absolute;left:354px; top:0px; background:#fff}
+.navTip2{ width:101px; height:180px; border:1px #c4ddf2 solid}
+.navTip2 li{color:#666; padding:12px 0 0 10px;}
+.navTip2 li a{ color:#666;}
+.navTip2 li a:hover{ color:#e40000;}
+.navTip1_2{ background:url(http://resources.it168.com/customerror/images/bg.png) no-repeat 0 -77px; width:103px; height:18px; overflow:hidden;}
+
+.nav_b{background:url(http://resources.it168.com/customerror/images/bg.png) no-repeat; height:34px; padding-top:9px}
+.nav_b a{color:#fff}
+.nav_b_1{width:204px; float:left; padding:0 45px 0 23px; display:inline-block}
+
+.main p{padding:68px 0 80px 0; text-align:center; font-size:14px; color:#666; font-weight:bold; line-height:30px}
+.main p a{color:#006dc8}
+
+.dh{background:#f4f3f3; overflow:hidden; border-top:2px #8b8989 solid; padding:0 0 15px 7px}
+.dh p{line-height:26px; color:#666}
+.dh p a{color:#666}
+.dh p b{width:70px; text-align:right; display:inline-block}
+.text1{font-size:14px; color:#555555; font-weight:bold; padding:10px 0 5px}
+
+.copyright{line-height:24px; text-align:center; margin-top:15px; overflow:hidden}
+.copyright span{color:#0060c3}
+address{font-style: normal;}
+</style>
+<base target="_blank"></base>
+<body>
+	<div class="header">
+    	<div class="header_box1">
+        	<div class="logo"><a href="http://www.it168.com/"><img src="http://resources.it168.com/customerror/images/logo_02.png" width="142" height="83" alt=""></a></div>
+            <div class="nav">
+            	<div class="nav_t">
+                <a class="dot" onMouseOut="document.getElementById('navSites').style.display='none'" onMouseOver="document.getElementById('navSites').style.display='block'" href="javascript:void(0)">盛拓传媒旗下网站</a>
+                	<div class="navTip1" id="navSites" onMouseOver="document.getElementById('navSites').style.display='block'" onMouseOut="document.getElementById('navSites').style.display='none'" style="z-index:100">
+<div class="navTip1_1">
+<div class="navTip1_2"></div>
+<ul class="navTip2">
+<li>·<a href="http://www.it168.com/" target="_self"><i class="it168"></i>IT168</a></li>
+<li>·<a href="http://www.pcpop.com/"><i class="pcpop"></i>泡泡网</a></li>
+<li>·<a href="http://www.itpub.net/list.html"><i class="itpub"></i>ITPUB</a></li>
+<li>·<a href="http://wenku.it168.com"><i class="wenku"></i>IT文库</a></li>
+<li>·<a href="http://www.chinaunix.net/"><i class="cu"></i>ChinaUnix</a></li>
+<li>·<a href="http://benyouhui.it168.com/"><i class="benyouhui"></i>本友会</a></li>
+<li>·<a href="http://www.igeek.com.cn/"><i class="igeek"></i>iGeek爱极客</a></li>
+</ul></div></div>
+                </div>
+                <div class="nav_b"><span class="nav_b_1"><a href="http://product.it168.com/">产品报价</a> <a href="http://product.it168.com/top/">热门排行</a> <a href="http://dealer.it168.com/">商铺大全</a> <a href="http://www.qudao168.com/">渠道168</a></span> <span><a href="http://labs.it168.com/">评测</a> <a href="http://wenku.it168.com/">文库</a> <a href="http://v.it168.com/">视频</a> <a href="http://focus.it168.com/">专题</a> <a href="http://d1.it168.com/">第一资讯</a></span></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="main">
+    	<p>很抱歉，您要访问的页面不存在，或链接错误！<br>
+请确认您输入的网址是否正确或返回<a href="http://www.it168.com/">IT168首页</a></p>
+    </div>
+    <div class="footer">
+    	<div class="dh">
+        	<p class="text1">频道导航</p>
+        	<p><a href="http://notebook.it168.com/">笔记本</a>  |  <a href="http://pad.it168.com/">平板电脑</a>  |  <a href="http://mobile.it168.com/">手机</a>  |  <a href="http://dc.it168.com/">数码相机</a>  |  <a href="http://elec.it168.com/">家电</a>  |  <a href="http://pc.it168.com/">家用电脑</a>  |  <a href="http://aio.it168.com/">一体电脑</a>  |  <a href="http://netbook.it168.com/">上网本</a>  |  <a href="http://dv.it168.com/">摄像机</a></p>
+            <p><b>DIY硬件：</b> <a href="http://cpu.it168.com/">CPU</a>  |  <a href="http://memory.it168.com/">内存硬盘</a>  |  <a href="http://mb.it168.com/">主板</a>  |  <a href="http://vga.it168.com/">显卡</a>  |  <a href="http://lcd.it168.com/">显示器</a>  |  <a href="http://mouse.it168.com/">键盘鼠标</a>  |  <a href="http://power.it168.com/">机箱电源</a></p>
+            <p><b>个人数码：</b> <a href="http://sound.it168.com/">音箱</a>  |  <a href="http://earphone.it168.com/">耳机</a>  |  <a href="http://digital.it168.com/">MP3/MP4</a>  |  <a href="http://mst.it168.com/">移动存储</a>  |  <a href="http://gps.it168.com/">GPS</a>  |  <a href="http://ebook.it168.com/">电子书</a></p>
+            <p><b>办公：</b> <a href="http://print.it168.com/">打印扫描</a>  |  <a href="http://projector.it168.com/">投影机</a>  |  <a href="http://mfp.it168.com/">复印复合机</a>  |  <a href="http://pc.it168.com/sypc.shtml">商用电脑</a></p>
+            <p><b>企业应用：</b> <a href="http://server.it168.com/">服务器</a>  |  <a href="http://net.it168.com/">网络通信</a>  |  <a href="http://www.itpub.net/">技术开发</a>  |  <a href="http://safe.it168.com/">安全</a>  |  <a href="http://storage.it168.com/">存储</a></p>
+        </div>
+        <div class="copyright">
+        	<span><a href="http://www.it168.com/bottomfile/it168.shtml">关于IT168</a> | <a href="http://www.it168.com/bottomfile/hzhb.shtml">合作伙伴</a> | <a href="http://www.it168.com/bottomfile/ggfw.shtml">广告服务</a> | <a href="http://www.it168.com/bottomfile/sytk.shtml">使用条款</a> | <a href="http://www.it168.com/bottomfile/tgzn.shtml">投稿指南</a> | <a href="http://hr.it168.com/front/index.aspx">诚聘精英</a> | <a href="http://www.it168.com/bottomfile/lxwm.shtml">联系我们</a> | <a href="http://www.it168.com//bottomfile/flgw/fl.htm">法律声明</a> | <a href="http://www.it168.com/bottomfile/sitemap/sitemap.html">网站导航</a></span>
+			<script type="text/javascript" src="http://resources.it168.com/it168_head_foot/footeraddress.js"></script>
+        </div>
+    </div>
+
+<script>
+//<--
+function add(k, v){url += "&" + k + "=" + v;}
+function isTop(){try{if(window.top == window){return true;}else{return false;}}catch(e){return flase;}}
+var url = "http://stat.it168.com/errorhandler/?url=" + encodeURIComponent(document.location.href);
+add("referrer", encodeURIComponent(document.referrer));
+add("code", 500);
+add("matchcase", 0);
+add("istop", isTop() ? 1 : 0);
+document.write("<frame style=\"display:none;\" src=\"" + url + "\" name=\"main\" frameborder=\"0\" />");
+//-->
+</script>
+</body>
+</html>

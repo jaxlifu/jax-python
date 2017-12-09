@@ -1,0 +1,286 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    
+    <string name="onesong">1 música</string>
+    
+    <plurals name="Nsongs">
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> músicas</item>
+    </plurals>
+
+    
+    <plurals name="Nsongscomp">
+        <item quantity="other"><xliff:g id="count_for_artist">%2$d</xliff:g> de <xliff:g id="total_count">%1$d</xliff:g> músicas</item>
+    </plurals>
+
+    
+    <plurals name="Nalbums">
+        
+        <item quantity="one">1 álbum</item>
+        
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> Álbuns</item>
+    </plurals>
+
+    
+    <skip />
+    
+    <string name="durationformatshort" translatable="false"><xliff:g id="format">%2$d:%5$02d</xliff:g></string>
+    
+    <string name="durationformatlong" translatable="false"><xliff:g id="format">%1$d:%3$02d:%5$02d</xliff:g></string>
+
+    
+    <string name="goto_start">Biblioteca</string>
+    
+    <string name="party_shuffle">Party shuffle</string>
+    
+    <string name="party_shuffle_off">Festa shuffle fora</string>
+    
+    <string name="delete_item">Excluir</string>
+    
+    <string name="shuffle_all">Shuffle todas</string>
+    
+    <string name="play_all">Jogar todos os</string>
+
+    
+    <string name="delete_artist_desc">Excluir permanentemente todas as músicas por <xliff:g id="artist">%s</xliff:g> from the SD card?</string>
+    
+    <string name="delete_artist_desc_nosdcard">Excluir permanentemente todas as músicas por <xliff:g id="artist">%s</xliff:g> from USB storage?</string>
+
+    
+    <string name="delete_album_desc">Excluir permanentemente o álbum inteiro \"<xliff:g id="album">%s</xliff:g>\" from the SD card?</string>
+    
+    <string name="delete_album_desc_nosdcard">Excluir permanentemente o álbum inteiro \"<xliff:g id="album">%s</xliff:g>\" from USB storage?</string>
+
+    
+    <string name="delete_song_desc">Excluir permanentemente \"<xliff:g id="song">%s</xliff:g>\" from the SD card?</string>
+    
+    <string name="delete_song_desc_nosdcard">Excluir permanentemente \"<xliff:g id="song">%s</xliff:g>\" from USB storage?</string>
+
+    
+    <string name="delete_confirm_button_text">Okey</string>
+    
+    <plurals name="NNNtracksdeleted">
+        
+        <item quantity="one">1 canção foi Excluídoda.</item>
+        
+        <item quantity="other"><xliff:g id="songs_to_delete">%d</xliff:g> canções foram excluídas.</item>
+    </plurals>
+
+    
+    <string name="scanning">Digitalização card\u2026 SD</string>
+    
+    <string name="scanning_nosdcard">Digitalização USB storage\u2026</string>
+
+    
+    <string name="nowplaying_title">Jogar agora</string>
+    
+    <string name="partyshuffle_title">Party shuffle</string>
+    
+    <string name="artists_title">Artistas</string>
+    
+    <string name="albums_menu">Álbuns</string>
+    
+    <string name="albums_title">Álbuns</string>
+    
+    <string name="tracks_menu">Músicas</string>
+    
+    <string name="tracks_title">Músicas</string>
+    
+    <string name="playlists_menu">Listas de reprodução</string>
+    
+    <string name="playlists_title">Listas de reprodução</string>
+    
+    <string name="videos_title">Vídeos</string>
+    
+    <string name="all_title">Todos os meios de comunicação</string>
+    
+    <string name="browse_menu">Artistas</string>
+    
+    <string name="search_title">Pesquisa</string>
+    
+    <string name="no_tracks_title">Não há músicas</string>
+    
+    <string name="no_videos_title">Não há vídeos</string>
+    
+    <string name="no_playlists_title">Não há playlists</string>
+    
+    <string name="delete_playlist_menu">Excluir</string>
+    
+    <string name="edit_playlist_menu">Editar</string>
+    
+    <string name="rename_playlist_menu">Renomear</string>
+    
+    <string name="playlist_deleted_message">Lista de excluídos.</string>
+    
+    <string name="playlist_renamed_message">Playlist renomeado.</string>
+    
+    <string name="recentlyadded">Recentemente adicionado</string>
+    
+    <string name="recentlyadded_title">Recentemente adicionado</string>
+    
+    <string name="podcasts_listitem">Podcasts</string>
+    
+    <string name="podcasts_title">Podcasts</string>
+    
+    <string name="sdcard_missing_title">Cartão SD n</string>
+    
+    <string name="sdcard_missing_title_nosdcard">Nenhum armazenamento USB</string>
+    
+    <string name="sdcard_missing_message">Doesn\ seu telefone tinha um cartão SD inserido.</string>
+    
+    <string name="sdcard_missing_message_nosdcard">Seu telefone doesn\ ' t ter armazenamento USB.</string>
+    
+    <string name="sdcard_busy_title">Cartão SD não está disponível</string>
+    
+    <string name="sdcard_busy_title_nosdcard">Armazenamento USB indisponível</string>
+    
+    <string name="sdcard_busy_message">Seu cartão SD está ocupado.</string>
+    
+    <string name="sdcard_busy_message_nosdcard">Seu armazenamento USB está ocupado.</string>
+    
+    <string name="sdcard_error_title">Erro de cartão SD</string>
+    
+    <string name="sdcard_error_title_nosdcard">Erro de armazenamento USB</string>
+    
+    <string name="sdcard_error_message">Foi encontrado um erro no seu cartão SD.</string>
+    
+    <string name="sdcard_error_message_nosdcard">Foi encontrado um erro em seu armazenamento USB.</string>
+    
+    <string name="unknown_artist_name">Artista desconhecido</string>
+    
+    <string name="unknown_album_name">Álbum desconhecido</string>
+    
+    <string name="shuffle_on_notif">Shuffle é no.</string>
+    
+    <string name="shuffle_off_notif">Shuffle está desligado.</string>
+    
+    <string name="repeat_off_notif">Repetir é desligado.</string>
+    
+    <string name="repeat_current_notif">Repetir a música atual.</string>
+    
+    <string name="repeat_all_notif">Repetir todas as músicas.</string>
+    
+    <string name="ringtone_menu">Uso como toque de telefone</string>
+    
+    <string name="ringtone_menu_short">Usar como ringtone</string>
+    
+    <string name="ringtone_set">\"<xliff:g example="Alarm Bell" id="name">%s</xliff:g>\" set as phone ringtone.</string>
+    
+    <string name="play_selection">Jogar</string>
+    
+    <string name="add_to_playlist">Adicionar à lista de reprodução</string>
+    
+    <string name="queue">Atual lista de reprodução</string>
+    
+    <string name="new_playlist">Novo</string>
+    
+    <string name="new_playlist_name_template">Nova lista de reprodução <xliff:g id="number">%d</xliff:g></string>
+    
+    <plurals name="NNNtrackstoplaylist">
+        
+        <item quantity="one">1 música adicionada à lista de reprodução.</item>
+        
+        <item quantity="other"><xliff:g example="27" id="number">%d</xliff:g> músicas adicionadas à lista de reprodução.</item>
+    </plurals>
+    
+    <string name="emptyplaylist">Playlist selecionada está vazia.</string>
+    
+    <string name="create_playlist_create_text">Salvar</string>
+    
+    <string name="create_playlist_overwrite_text">Sobrescrever</string>
+    
+    <string name="service_start_error_title">Problema de reprodução</string>
+    
+    <string name="service_start_error_msg">A canção couldn\ ' t ser jogado.</string>
+    
+    <string name="service_start_error_button">Okey</string>
+    
+    
+    <string-array name="weeklist">
+        <item>"uma semana"</item>
+        <item>"2 semanas"</item>
+        <item>"3 semanas"</item>
+        <item>"4 semanas"</item>
+        <item>"cinco semanas"</item>
+        <item>"6 semanas"</item>
+        <item>"sete semanas"</item>
+        <item>"8 semanas"</item>
+        <item>"9 semanas"</item>
+        <item>"10 semanas"</item>
+        <item>"11 semanas"</item>
+        <item>"12 semanas"</item>
+    </string-array>
+    
+    <string name="weekpicker_set">Feito</string>
+    
+    <string name="weekpicker_title">Tempo definido</string>
+    
+    <color name="dragndrop_background">#e0103010</color>
+    
+    <color name="expanding_child_background">#ff404040</color>
+
+    
+    <string name="save_as_playlist">Salvar como lista de reprodução</string>
+    
+    <string name="clear_playlist">Clara playlist</string>
+
+    
+    <string name="musicbrowserlabel">Música</string>
+    
+    <string name="musicshortcutlabel">Lista de músicas</string>
+    
+    <string name="mediaplaybacklabel">Música</string>
+    
+    <string name="videobrowserlabel">Vídeos</string>
+    
+    <string name="mediapickerlabel">Música</string>
+
+    
+    <string name="playback_failed">O jogador doesn\ ' t suporte este tipo de arquivo de áudio.</string>
+
+    
+    <string name="cancel">Cancelar</string>
+
+    
+    <string name="remove_from_playlist">Remover da lista de reprodução</string>
+
+    
+    <string name="streamloadingtext">Conectando-se ao <xliff:g id="host">%s</xliff:g>\u2026</string>
+
+    
+    <string name="mediasearch">Pesquisar por <xliff:g example="Beethoven" id="term">%s</xliff:g> using:</string>
+
+    
+    <string name="working_artists">Artists\u2026</string>
+    
+    <string name="working_albums">Albums\u2026</string>
+    
+    <string name="working_songs">Songs\u2026</string>
+    
+    <string name="working_playlists">Playlists\u2026</string>
+
+    
+    <string name="loading">Loading\u2026</string>
+    
+    <string name="sort_by_track">Faixas</string>
+    
+    <string name="sort_by_album">Álbuns</string>
+    
+    <string name="sort_by_artist">Artistas</string>
+    
+    <string name="music_picker_title">Escolha a faixa de música</string>
+
+    
+    <string name="search_settings_description">Artistas, álbuns e faixas</string>
+
+    
+    <string name="search_hint">Pesquisar música</string>
+
+    
+    <string name="fast_scroll_alphabet">\u0020ABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+
+    
+    <string name="widget_initial_text">Toque para escolher a música.</string>
+
+    
+    <string name="effectspanel">Efeitos sonoros</string>
+</resources>

@@ -1,0 +1,53 @@
+server {
+    listen   80;
+
+    root       /home/jax/python/lizhi;
+    access_log /home/jax/python/lizhi/log/access_log;
+    error_log  /home/jax/python/lizhi/log/error_log;
+
+    # 通过该域名访问
+    server_name lizhi.chongchongshi.com;
+
+    client_max_body_size 1m;
+
+    gzip            on;
+    gzip_min_length 1024;
+    gzip_buffers    4 8k;
+    gzip_types      text/css application/x-javascript application/json;
+
+    sendfile on;
+
+	# 禁止访问git文件
+    location ^~ /.git {
+        deny all;
+    }
+
+	# django的静态文件，直接通过nginx访问，不走uWsgi。
+    location ^~ /static {
+        root   /home/jax/python/lizhi;
+        index  index.html;
+        expires 1M;
+        add_header Cache-Control "public";
+    }
+
+    location /imsages {
+        root /home/jax/python;
+        autoindex on;
+    }
+	# 非静态文件请求都走uWsgi，具体端口在upstream配置
+    location / {
+        proxy_next_upstream error timeout http_500 http_503;
+        proxy_connect_timeout 4000ms;
+        proxy_read_timeout    30s;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_set_header X-Rewrite-URL $request_uri;
+        client_max_body_size 10m;
+
+		# 通过 upstream
+        uwsgi_pass  unix:/home/jax/python/lizhi/script/uwsgi.sock;
+        include uwsgi_params;
+    }
+
+}
