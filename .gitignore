@@ -1,3 +1,4 @@
 *.log
 *.txt
 *.pyc
+itchat/*.pkl

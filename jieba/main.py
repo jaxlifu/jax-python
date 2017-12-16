@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import os
-import sys
-import jieba
 import codecs
 import math
-from jieba.posseg import cut
+import os
+import sys
 
+import jieba
+from jieba.posseg import cut
 
 names = {}
 relationships = {}

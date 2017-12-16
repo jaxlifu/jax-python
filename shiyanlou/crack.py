@@ -1,10 +1,10 @@
-from PIL import Image
 import hashlib
-import time
-import os
-
-
 import math
+import os
+import time
+
+from PIL import Image
+
 
 class VectorCompare:
 def magnitude(self,concordance):
