@@ -27,6 +27,7 @@ User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, 
 '''
 HOST_URL = 'http://www.517mh.net'
 BASE_URL = 'http://www.517mh.net/comic/9655/'
+IMG_HOST = 'http://pic1.517mh.net'
 
 class Comic(object):
     def __init__(self, *args, **kwargs):
@@ -45,12 +46,17 @@ class Comic(object):
         for item in chapter_divs:
             links = item.find_all('a', attrs={'class': 'status0'})
             for link in links:
-                print(link.get('title'), HOST_URL + link.get('href'))
-                self.load_comic_content(HOST_URL + link.get('href'))
-                break
+                title,url = link.get('title'),HOST_URL+link.get('href')
+                path = '%s/%s' % (DOWNLOAD_DIR, title)
+                if os.path.exists(path):
+                    continue
+                os.mkdir(path)
+                self.load_comic_content(url, title)
         pass
 
     def load_comic_content(self,url,title):
+        if not url or not url.startswith('http'):
+            return
         content_page = self.session.get(url,headers=self.headers)
         if content_page.status_code!=200:
             return
@@ -58,18 +64,26 @@ class Comic(object):
         content_page.encoding ='GBK'
         urls = re.findall(r'var qTcms_S_m_murl_e="(.*?)";',content_page.text,re.S)
         for url in urls:
-            url = base64.b64decode(url)
-            img_urls = str(url).split('$qingtiandy$')
+            url = base64.b64decode(url).decode("utf-8")
+            img_urls = url.split('$qingtiandy$')
             for img_url in img_urls:
+                if 'http://' not in img_url:
+                    img_url = IMG_HOST + img_url
                 self.download_image(img_url, '%s/%s' % (DOWNLOAD_DIR, title))
         pass
 
     def download_image(self,url,path):
-        image_page=self.session.get(url,headers=self.headers)
+        print(url)
+        if not url or not url.startswith('http'):
+            return
+        image_page=self.session.get(url)
         if image_page.status_code!=200:
-            pass
+            return
         filename = '%s/%s' % (path,url.split('/')[-1])
-        if os.path.exists(filename,'wb') as f:
+        if os.path.exists(filename):
+            return
+
+        with open(filename,'wb' ) as f:
             f.write(image_page.content)
         pass
 

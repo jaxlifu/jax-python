@@ -18,14 +18,6 @@ def get_post_test():
 
 
 def getHtmlSource():
-    # f = open('zhihu-message.log', 'w')
-    # for pageNum in range(1, 21):
-    #     url = "http://www.zhihu.com/collection/27109279?page=%d" % (pageNum)
-    #     print('zhihu-url is \n%s' % (url))
-    #     r = requests.get(url)
-    #     r.encoding = 'utf-8'
-    #     print('zhihu-message is \n%s' % (r.text))
-    # f.close()
     keyword = input("int put keyword :")
     # 创建一个关键字对应的目录
     dirPath = '%s/%s' % (os.getcwd(), keyword)

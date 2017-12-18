@@ -131,6 +131,6 @@ if __name__ == '__main__':
     if not os.path.exists('download'):
         os.mkdir('download')
     init_headers()
-    itchat.auto_login(hotReload=True)
+    itchat.auto_login(hotReload=True,enableCmdQR=True)
     owner = itchat.get_friends()[0]['UserName']
     itchat.run()
