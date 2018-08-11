@@ -40,14 +40,18 @@ class Downloader(object):
         page.encoding = 'GBK'
         if page.status_code == 200:
             bs = BeautifulSoup(page.text, 'html5lib')
-            chaptersUrl = bs.find_all(
-                'a', href=[re.compile('chapters')])[0]['href']
-            bookId = bs.find_all('a', text=['立即阅读'])[0]['href']
-            bookId = re.findall(r'/(book_.*?)/', bookId)[0]
-            self.id = bookId
-            # 获取书籍章节目录
-            chaptersUrl = '{0}{1}'.format(self.hostUrl, chaptersUrl)
-            self.getBookChapters(chaptersUrl)
+            chaptersUrl = bs.find_all('a', href=[re.compile('chapters')])
+            bookId = bs.find_all('a', text=['立即阅读'])
+            noFound = bs.find_all('p', attrs={'class': 'havno'})
+            if chaptersUrl:
+                chaptersUrl = chaptersUrl[0]['href']
+                bookId = re.findall(r'/(book_.*?)/', bookId[0]['href'])[0]
+                self.id = bookId
+                # 获取书籍章节目录
+                chaptersUrl = '{0}{1}'.format(self.hostUrl, chaptersUrl)
+                self.getBookChapters(chaptersUrl)
+            elif noFound:
+                print(noFound[0].text)
 
     def getBookChapters(self, url):
         '''
@@ -64,7 +68,8 @@ class Downloader(object):
             chaptersList = ['{0}{1}'.format(
                 self.hostUrl, item['href']) for item in chaptersList]
             if self.lastUrl in chaptersList:
-                chaptersList = chaptersList[chaptersList.index(self.lastUrl):]
+                index = 1 + chaptersList.index(self.lastUrl)
+                chaptersList = chaptersList[index:]
             if chaptersList:
                 for item in chaptersList:
                     self.getBookDetails(item)
@@ -110,48 +115,76 @@ class Downloader(object):
         '''
         保存当前下载位置
         '''
+        if not self.name:
+            return
         obj = {
             'url': self.lastUrl,
             'chaptersUrl': self.lastChaptersUrl,
             'id': self.id,
             'name': self.name
         }
+        res = self.loadLastInfo(self.name)
+        res[self.name] = obj
         f = open('download.data', 'wb')
-        pickle.dump(obj, f)
+        pickle.dump(res, f)
         f.close()
 
-    def loadLastInfo(self):
+    def loadLastInfo(self, name):
         '''
         获取当前下载的位置
         '''
+        obj = {}
         if os.path.exists('download.data'):
             f = open('download.data', 'rb')
             obj = pickle.load(f)
-            self.id = obj['id']
-            self.lastUrl = obj['url']
-            self.name = obj['name']
-            self.lastChaptersUrl = obj['chaptersUrl']
+            if name in obj:
+                book = obj[name]
+                self.id = book['id']
+                self.lastUrl = book['url']
+                self.name = book['name']
+                self.lastChaptersUrl = book['chaptersUrl']
             f.close()
+        return obj
 
     def start(self, name):
-        self.loadLastInfo()
+        self.loadLastInfo(name)
         if self.lastUrl:
             self.getBookChapters(self.lastChaptersUrl)
         else:
             self.searchBook(name)
 
+    def checkExists(self, name):
+        return os.path.exists('{0}.txt'.format(name))
+
+    def deleteFile(self, name):
+        try:
+            os.remove('{0}.txt'.format(name))
+        except Exception as _:
+            pass
+
 
 def main(name):
     downloader = Downloader()
     try:
-        downloader.start(name)
+        if downloader.checkExists(name):  # 判断文件是否存在
+            choices = input(
+                'check file exists do you want to delete it: (Y/N) ').lower()
+            # 是否删除已存在书籍文件
+            if choices == 'y' or choices == 'yes':  # 删除已存在的文件
+                downloader.deleteFile(name)
+                downloader.searchBook(name)
+            else:  # 直接继续下载
+                downloader.start(name)
+        else:  # 文件不存在直接搜索书名开始下载
+            downloader.searchBook(name)
     except BaseException as _:
-        # 出现异常的时候保存当前下载进度
+        pass
+    finally:  # 出现异常的时候保存当前下载进度
         downloader.saveLastInfo()
     pass
 
 
 if __name__ == '__main__':
     name = input('please input book name: ')
-    main(name)
-    print('书籍下载完成!')
+    main(name.strip())
+    print('书籍下载结束!')
